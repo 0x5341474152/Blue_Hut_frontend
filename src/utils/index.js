@@ -1,0 +1,10 @@
+export { getHotelsByPrice } from "./price";
+export { getHotelsByRoomsAndBeds } from "./room-beds";
+export { getHotelsByPropertyType } from "./property";
+export { getHotelsByRatings } from "./rating";
+export { getHotelsByCancelation } from "./hotel-cancel";
+export { validateName } from "./name";
+export { validateEmail } from "./email";
+export { validatePassword } from "./password";
+export { validateNumber } from "./number";
+export { findHotelInWishlist } from "./find";
