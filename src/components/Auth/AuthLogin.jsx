@@ -1,4 +1,3 @@
-
 import "./Auth.css";
 import { validateNumber, validatePassword } from "../../utils";
 import { loginHandler } from "../../services";

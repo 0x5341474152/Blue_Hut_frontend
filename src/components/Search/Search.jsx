@@ -16,7 +16,7 @@ export const Search= () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://blue-hut-backend-niu2q8ow9-sagaradhrits-projects.vercel.app/api/hotels?category=${hotelCategory}`
+          `http://localhost:3500/api/hotels?category=${hotelCategory}`
         );
         setHotels(data);
       } catch (err) {

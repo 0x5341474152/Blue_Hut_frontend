@@ -26,7 +26,7 @@ export const Payment = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://blue-hut-backend-niu2q8ow9-sagaradhrits-projects.vercel.app/hotels/${id}`
+          `http://localhost:3500/api/hotels/${id}`
         );
         setSingleHotel(data);
       } catch (err) {

@@ -1,36 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { AlertProvider as Alertp } from './contexts/AlertContext';
-import { AuthProvider as Authp } from './contexts/AuthContext';
-import { CategoryProvider as Categoryp } from './contexts/CategoryContext';
-import { DateProvider as Datep } from './contexts/DateContext';
-import { FilterProvider as Filterp } from './contexts/FilterContext';
-import { WishlistProvider as Wishlistp } from './contexts/WishlistContext';
-import { HotelProvider as Hotelp } from './contexts/HotelContext';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+import {
+  CategoryProvider,
+  DateProvider,
+  FilterProvider,
+  AuthProvider,
+  WishlistProvider,
+  HotelProvider,
+  AlertProvider
+} from "./contexts";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      
-        <Categoryp>
-          <Datep>
-            <Filterp>
-            <Authp>
-              <Wishlistp>
-                <Hotelp>
-                  <Alertp>
+      <CategoryProvider>
+        <DateProvider>
+          <FilterProvider>
+            <AuthProvider>
+              <WishlistProvider>
+                <HotelProvider>
+                  <AlertProvider>
                     <App />
-                  </Alertp>
-                </Hotelp>
-              </Wishlistp>
-              </Authp>
-            </Filterp>
-          </Datep>
-        </Categoryp>
-      
+                  </AlertProvider>
+                </HotelProvider>
+              </WishlistProvider>
+            </AuthProvider>
+          </FilterProvider>
+        </DateProvider>
+      </CategoryProvider>
     </Router>
   </React.StrictMode>
 );

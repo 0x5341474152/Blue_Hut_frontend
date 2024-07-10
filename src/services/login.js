@@ -3,12 +3,13 @@ import axios from "axios";
 export const loginHandler = async (number, password, setAlert) => {
   try {
     const {
-      data: { accessToken, username },
+      data: { accessToken, username,setAlert },
     } = await axios.post(
-      "https://blue-hut-backend-niu2q8ow9-sagaradhrits-projects.vercel.app/api/auth/login",
+      "http://localhost:3500/api/auth/login",
       {
         number: number,
         password: password,
+        
       }
     );
     console.log("Logged IN");
