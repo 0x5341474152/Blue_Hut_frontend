@@ -51,27 +51,30 @@ export const Payment = () => {
 
   const handleConfirmBookingClick = async () => {
     const response = await loadScript(
-      "https://checkout.razorpay.com/v1/checkout.js"
+      "http://checkout.razorpay.com/v1/checkout.js"
     );
     if (!response) {
       console.log({ message: "Razorpay SDK failed to load" });
     }
 
     const options = {
-      key: "rzp_test_VSdp7X3K39GwBK",
+      key: "rzp_test_VSdp7X3K39GwBK", // Your Razorpay key
       amount: totalPayableAmount * 100,
       currency: "INR",
-      name: "TravelO",
+      name: "Blue-Hut",
       email: "sakari@gmail.com",
       contact: "9876543210",
       description: "Thank you for booking with us",
 
       handler: ({ payment_id }) => {
-        setHotel({...singleHotel, orderId: uuid(),
-        payment_id, 
-        checkInDate: checkInDate.toLocaleDateString("en-US", { day: "numeric", month: "short" }),
-        checkOutDate: checkOutDate.toLocaleDateString("en-US", { day: "numeric", month: "short" }),
-        totalPayableAmount});
+        setHotel({
+          ...singleHotel,
+          orderId: uuid(),
+          payment_id,
+          checkInDate: checkInDate.toLocaleDateString("en-US", { day: "numeric", month: "short" }),
+          checkOutDate: checkOutDate.toLocaleDateString("en-US", { day: "numeric", month: "short" }),
+          totalPayableAmount
+        });
         navigate("/order-summary");
       },
       prefill: {
@@ -90,7 +93,7 @@ export const Payment = () => {
       <header className="heading">
         <h1 className="heading-1">
           <Link className="link" to="/">
-            TravelO
+            Blue-Hut
           </Link>
         </h1>
       </header>

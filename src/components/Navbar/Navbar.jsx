@@ -64,7 +64,7 @@ export const Navbar = ({ route }) => {
             menu
           </span>
           <span className="material-icons-outlined profile-option person">
-            person_2
+            person
           </span>
         </div>
       </nav>
