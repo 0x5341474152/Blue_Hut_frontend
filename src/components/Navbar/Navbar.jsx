@@ -27,7 +27,7 @@ export const Navbar = ({ route }) => {
   return (
     <header className="heading d-flex align-center">
       <h1 className="heading-1">
-        <Link className="link" to="/">
+        <Link className="link allura-regular" to="/">
           Blue-Hut
         </Link>
       </h1>
@@ -42,7 +42,7 @@ export const Navbar = ({ route }) => {
           <span className="border-right-1px"></span>
           <span className="form-option">
             {checkInDate && checkOutDate && route !== "home"
-              ? `${checkInDate.toLocaleDateString("en-US", {
+               ? `${checkInDate.toLocaleDateString("en-US", {
                   day: "numeric",
                   month: "short",
                 })} - ${checkOutDate.toLocaleDateString("en-US", {
